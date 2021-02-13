@@ -1,0 +1,8 @@
+RequestTime:11/16/2020 14:42:18
+ResponseMillis:1223
+StatusCode:400
+Method:POST
+Path:/api/UserAuthentication/Login
+QueryString:
+RequestBody:{"Email":"fdvdfv@sdfd.com","Password":"sdfsdf34"}
+ResponseBody:{"message":"Incorrect username or password."}

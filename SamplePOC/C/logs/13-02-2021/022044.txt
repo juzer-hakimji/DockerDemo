@@ -1,0 +1,8 @@
+RequestTime:02/13/2021 14:20:44
+ResponseMillis:19
+StatusCode:200
+Method:GET
+Path:/api/UserOperations/ProfileData/1
+QueryString:
+RequestBody:
+ResponseBody:{"UserId":1,"FirstName":"juzer","LastName":"hakimji","MobileNumber":"7057831149","Email":"juzerhakimji@gmail.com","Password":null,"CountryId":1,"Gender":"","LanguageId":"","Remarks":"","Token":null,"CountryList":[]}

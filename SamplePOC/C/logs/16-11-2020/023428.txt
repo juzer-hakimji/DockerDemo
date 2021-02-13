@@ -1,0 +1,8 @@
+RequestTime:11/16/2020 14:34:12
+ResponseMillis:15728
+StatusCode:400
+Method:POST
+Path:/api/UserAuthentication/Login
+QueryString:
+RequestBody:{"Email":"dfvfdv@sdfsd.com","Password":"jhvghvgvt7"}
+ResponseBody:{"message":"Something went wrong. Please try again."}

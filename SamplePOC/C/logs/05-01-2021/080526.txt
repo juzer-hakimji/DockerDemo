@@ -1,0 +1,8 @@
+RequestTime:01/05/2021 08:05:24
+ResponseMillis:1768
+StatusCode:200
+Method:POST
+Path:/api/UserAuthentication/Login
+QueryString:
+RequestBody:{"Email":"juzerhakimji@gmail.com","Password":"cooljuzer"}
+ResponseBody:{"UserId":1,"FirstName":"juzer","LastName":"hakimji","MobileNumber":"7057831149","Email":"juzerhakimji@gmail.com","Password":null,"CountryId":1,"Gender":"","LanguageId":"","Remarks":"","Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuYmYiOjE2MDk4MzM5MjYsImV4cCI6MTYxMDQzODcyNiwiaWF0IjoxNjA5ODMzOTI2fQ.1-a-6shvSb7RztiNX3OUVyODG0S2uZoEUq_382xhWHY","CountryList":[]}

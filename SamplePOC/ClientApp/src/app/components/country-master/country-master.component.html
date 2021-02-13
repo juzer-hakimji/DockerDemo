@@ -1,0 +1,48 @@
+  <h1 class="text-center">Country Master</h1>
+    <div class="container">
+      <form (ngSubmit)="onSubmit(); CountryMasterForm.reset()" #CountryMasterForm="ngForm">
+        <div class="form-group">
+          <label for="CountryName">Country Name</label>
+          <input type="text" class="form-control" id="CountryName" required [(ngModel)]="CountryModel.CountryName" pattern="^[a-zA-Z]+$" name="CountryName" #CountryName="ngModel" placeholder="Country Name">
+        </div>
+        <div *ngIf="CountryName.invalid && (CountryName.dirty || CountryName.touched)" class="alert alert-danger">
+          <div *ngIf="CountryName.errors.required">Country name is required</div>
+          <div *ngIf="CountryName.errors.pattern">Only letters are allowed</div>
+        </div>
+        <div class="form-group">
+          <label for="CountryCode">Country Code</label>
+          <input type="text" class="form-control" id="CountryCode" required [(ngModel)]="CountryModel.CountryCode" name="CountryCode" #CountryCode="ngModel" placeholder="Country Code">
+        </div>
+        <div *ngIf="CountryCode.invalid && (CountryCode.dirty || CountryCode.touched)" class="alert alert-danger">
+          <div *ngIf="CountryCode.errors.required">Country code is required</div>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!CountryMasterForm.form.valid">
+          save
+        </button>
+        <!--<div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>-->
+      </form>
+    </div>
+
+    <div *ngIf="CountryList">
+      <h1 class="text-center" id="tableLabel">Country List</h1>
+      <table class='table table-striped' aria-labelledby="tableLabel">
+        <thead>
+          <tr>
+            <th>Country Name</th>
+            <th>Country Code</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let country of CountryList">
+            <td>{{ country.CountryName }}</td>
+            <td>{{ country.CountryCode }}</td>
+            <td>
+              <a class="mr-2 fake-link" (click)="CountryEdit(country.CountryId)">Edit</a>
+              <a class="fake-link" (click)="CountryDelete(country.CountryId)">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>

@@ -1,0 +1,28 @@
+<div class="col-md-6 offset-md-3 MarTop">
+  <div class="card border">
+    <h4 class="card-header">Login</h4>
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': loginForm.controls.Email.invalid && (loginForm.controls.Email.dirty || loginForm.controls.Email.touched) }" placeholder="Email" />
+          <div *ngIf="loginForm.controls.Email.invalid && (loginForm.controls.Email.dirty || loginForm.controls.Email.touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.controls.Email.errors.required">Email is required</div>
+            <div *ngIf="loginForm.controls.Email.errors.email">Please enter a valid Email</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched) }" placeholder="Password" />
+          <div *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)" class="alert alert-danger">
+            <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+          </div>
+        </div>
+        <span><a routerLink="/Registration">New User! Please register</a></span><br />
+        <button [disabled]="loginForm.invalid || loading" class="btn btn-success">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

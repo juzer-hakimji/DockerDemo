@@ -1,0 +1,62 @@
+<div>
+  <div class="container">
+    <h1 class="text-center">User Profile</h1>
+
+    <div class="row rowmargin">
+      <div class="col-sm-6 card-text">Name : {{ User.FirstName + ' ' + User.LastName }}</div>
+      <div class="col-sm-6 card-text">
+        Email : {{  User.Email }}
+      </div>
+    </div>
+
+    <div class="row rowmargin">
+      <div class="col-sm-6 card-text">Mobile Number : {{ User.MobileNumber }}</div>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #UserProfileForm="ngForm">
+
+      <div class="row rowmargin">
+        <div class="col-sm-12 card-text">
+          <label>Gender : </label>
+          <input type="radio" name="gender" value="1" [(ngModel)]="User.Gender" />Male
+          <input type="radio" name="gender" value="2" [(ngModel)]="User.Gender" />Female
+        </div>
+      </div>
+
+      <div class="row rowmargin">
+        <div class="col-sm-6 card-text">
+          <label>Language : </label>
+          <input type="radio" name="language" value="1" [(ngModel)]="User.LanguageId" />English
+          <input type="radio" name="language" value="2" [(ngModel)]="User.LanguageId" />Hindi
+        </div>
+        <div class="col-sm-6 card-text" *ngIf="User.LanguageId == 1">
+          <label>
+            Remarks :
+          </label>
+          <input type="text" name="Remarks" required [(ngModel)]="User.Remarks" #Remarks="ngModel" placeholder="Remarks" />
+          <div *ngIf="Remarks.invalid && (Remarks.dirty || Remarks.touched)" class="alert alert-danger">
+            <div *ngIf="Remarks.errors.required">Remarks is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row rowmargin">
+        <div class="col-sm-12">
+          <label for="">Choose country : </label>
+          <select class="" [(ngModel)]="User.CountryId" #CountryDD name="CountryDD">
+            <option value="">None</option>
+            <option *ngFor="let country of User.CountryList" [value]="country.CountryId">
+              {{country.CountryName + '('+country.CountryCode+')'}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-success" [disabled]="!UserProfileForm.form.valid">
+          Submit
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+RequestTime:01/05/2021 08:05:36
+ResponseMillis:89
+StatusCode:200
+Method:POST
+Path:/api/UserOperations/SaveUserDetails
+QueryString:
+RequestBody:{"UserId":1,"FirstName":"juzer","LastName":"hakimji","MobileNumber":"7057831149","Email":"juzerhakimji@gmail.com","Password":null,"CountryId":1,"Gender":null,"LanguageId":null,"Remarks":"","Token":null,"CountryList":[]}
+ResponseBody:{"message":"changes saved successfully."}

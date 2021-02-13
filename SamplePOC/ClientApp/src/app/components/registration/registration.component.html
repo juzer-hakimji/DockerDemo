@@ -1,0 +1,77 @@
+
+<h1 class="text-center">Registration Form</h1>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="RegistrationForm">
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">First Name</label>
+          <input type="text" class="form-control" formControlName="FirstName" [ngClass]="{ 'is-invalid':RegistrationForm.controls.FirstName.invalid && (RegistrationForm.controls.FirstName.dirty || RegistrationForm.controls.FirstName.touched) }" placeholder="First Name">
+          <div *ngIf="RegistrationForm.controls.FirstName.invalid && (RegistrationForm.controls.FirstName.dirty || RegistrationForm.controls.FirstName.touched)" class="alert alert-danger">
+            <div *ngIf="RegistrationForm.controls.FirstName.errors.required">First Name is required</div>
+            <div *ngIf="RegistrationForm.controls.FirstName.errors.minlength || RegistrationForm.controls.FirstName.errors.maxlength">Please enter proper First Name</div>
+            <div *ngIf="RegistrationForm.controls.FirstName.errors.pattern">Only letters are allowed</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Last Name</label>
+          <input type="text" class="form-control" formControlName="LastName" [ngClass]="{ 'is-invalid':RegistrationForm.controls.LastName.invalid && (RegistrationForm.controls.LastName.dirty || RegistrationForm.controls.LastName.touched) }" placeholder="Last Name">
+          <div *ngIf="RegistrationForm.controls.LastName.invalid && (RegistrationForm.controls.LastName.dirty || RegistrationForm.controls.LastName.touched)" class="alert alert-danger">
+            <div *ngIf="RegistrationForm.controls.LastName.errors.required">Last Name is required</div>
+            <div *ngIf="RegistrationForm.controls.LastName.errors.minlength || RegistrationForm.controls.LastName.errors.maxlength">Please enter proper Last Name</div>
+            <div *ngIf="RegistrationForm.controls.LastName.errors.pattern">Only letters are allowed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="MobileNumber">Mobile Number</label>
+          <input type="text" class="form-control" formControlName="MobileNumber" [ngClass]="{ 'is-invalid':RegistrationForm.controls.MobileNumber.invalid && (RegistrationForm.controls.MobileNumber.dirty || RegistrationForm.controls.MobileNumber.touched) }" placeholder="Mobile Number">
+          <div *ngIf="RegistrationForm.controls.MobileNumber.invalid && (RegistrationForm.controls.MobileNumber.dirty || RegistrationForm.controls.MobileNumber.touched)" class="alert alert-danger">
+            <div *ngIf="RegistrationForm.controls.MobileNumber.errors.required">Mobile Number is required</div>
+            <div *ngIf="RegistrationForm.controls.MobileNumber.errors.minlength || RegistrationForm.controls.MobileNumber.errors.maxlength">Please enter proper Mobile Number</div>
+            <div *ngIf="RegistrationForm.controls.MobileNumber.errors.pattern">Only Numbers are allowed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="Email">Email</label>
+          <input type="text" class="form-control" formControlName="Email" [ngClass]="{ 'is-invalid':RegistrationForm.controls.Email.invalid && (RegistrationForm.controls.Email.dirty || RegistrationForm.controls.Email.touched) }" placeholder="Email">
+          <div *ngIf="RegistrationForm.controls.Email.invalid && (RegistrationForm.controls.Email.dirty || RegistrationForm.controls.Email.touched)" class="alert alert-danger">
+            <div *ngIf="RegistrationForm.controls.Email.errors.required">Email is required</div>
+            <div *ngIf="RegistrationForm.controls.Email.errors.email">Please enter a valid Email</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="name">Password</label>
+          <input type="password" class="form-control" formControlName="Password" [ngClass]="{ 'is-invalid':RegistrationForm.controls.Password.invalid && (RegistrationForm.controls.Password.dirty || RegistrationForm.controls.Password.touched) }" placeholder="Password">
+          <div *ngIf="RegistrationForm.controls.Password.invalid && (RegistrationForm.controls.Password.dirty || RegistrationForm.controls.Password.touched)" class="alert alert-danger">
+            <div *ngIf="RegistrationForm.controls.Password.errors.required">Password is required</div>
+            <div *ngIf="RegistrationForm.controls.Password.errors.pattern">password must be Minimum eight characters, at least one letter and one number</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="m-auto mt-4 d-flex">
+        <button type="submit" class="btn btn-success" [disabled]="RegistrationForm.invalid">
+          Submit
+        </button>
+        <a class="btn btn-primary ml-2" routerLink="/">Back</a>
+      </div>
+    </div>
+  </form>
+</div>
+
