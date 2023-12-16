@@ -3,4 +3,4 @@ Running angular and .net core application inside docker container and connecting
 
 For further details please visit https://juzerhakimji.in/run-dotnet-core-angular-app-in-docker-container
 
-Also please check out this free <a href="https://www.bidathlete.com">cricket auction software</a> for players participating in sports tournaments and also share with others Thanks.  
+Also please check out this <a href="https://www.bidathlete.com">cricket auction software</a> for players participating in sports tournaments and also share with others Thanks.  
